@@ -1,0 +1,33 @@
+Sandulache Mihnea-Stefan - 312CC
+Tema 2 SDA 2023
+
+Timp de implementare - 16 ore
+Punctaj checker local - 80 puncte pentru teste + 20 puncte pentru valgrind
+-------------------------------------------------------------------------------
+    Programul are la baza atat structuri pentru utlizarea cozii si
+implementarea arborelui si imaginii, cat functii pentru construirea si
+reconstruirea arborelui si imaginii, lucrul cu coada, eliberari de memorie ,dar
+si alte functii auxiliare.
+    Functia quadtree_construction utilizeaza informatiile citite in functia
+main despre pixelii imaginii si calculeaza sumele aferente si scorul pentru a 
+determina daca o subimagine trebuie divizata in alte 4 blocuri, construind,
+astfel, arborele cuaternar asociat imaginii.In cazul in care scorul este mai
+mic decat pragul primit ca argument in linia de comanda, subimaginea curenta nu
+mai necesita divizare si se considera ca am ajuns la un nod frunza al
+arborelui.In caz contrar, este continuata divizarea.De asemenea, functia
+calculeaza blocul cu latura de lungime maxima si numarul de frunze, ce
+corespunde numarului de blocuri cu scorul mai mic sau egal decat pragul.
+    Functia bfs parcurge in latime arborele construit anterior si scrie in
+fisier datele despre imagine si fiecare nod al arborelui, generandu-se,
+astfel, fisierul imaginii comprimate.
+    Pentru a treia cerinta, am implementat doua functii pentru reconstruirea
+imaginii initiale: o functie care reconstruieste arborele pe latime parcurgand
+fisierul comprimat si verificand nodurile care sunt frunze, pentru acestea
+memorand valorile R, G, B pentru a umple, ulterior, imaginea cu acestea si o
+functie care reconstruieste imaginea propriu-zisa, care parcurge arborele
+reconstruit si in momentul in care intalneste un nod frunza, umple subimaginea
+curenta cu valorile R, G, B ale nodului, iar in caz contrar se continua
+parcurgerea.
+    In functia main, se trateaza cazuri pentru cele trei cerinte, astfel fiind
+alocata memoria necesara si deschise fisierele de citire si scriere, iar la
+final este eliberata memorie si sunt inchise fisierele.
